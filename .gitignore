@@ -1,0 +1,59 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# MemoryCaptures can get very large
+[Mm]emoryCaptures/
+
+# Recordings
+[Rr]ecordings/
+
+# Asset Store tools
+[Aa]ssets/AssetStoreTools*
+
+# IDE / editors
+.vs/
+.idea/
+.vscode/
+
+# Unity generated IDE/project files
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Gradle
+.gradle/
+
+# Unity crash reports
+sysinfo.txt
+
+# Builds / exported packages
+*.apk
+*.aab
+*.unitypackage
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs / temp
+*.log
+*.tmp
+
+# Visual Studio / Rider cache
+.vsconfig.user
