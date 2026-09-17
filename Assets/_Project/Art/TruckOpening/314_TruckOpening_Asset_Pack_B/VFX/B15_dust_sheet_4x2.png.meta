@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 8a743460e50233c44bcee5f528c6d5e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2063789027840228813
+    second: B15_dust_sheet_4x2_0
+  - first:
+      213: -2332564049253354759
+    second: B15_dust_sheet_4x2_1
+  - first:
+      213: 472562435578000902
+    second: B15_dust_sheet_4x2_2
+  - first:
+      213: -4540895987617320887
+    second: B15_dust_sheet_4x2_3
+  - first:
+      213: 7610952436199018206
+    second: B15_dust_sheet_4x2_4
+  - first:
+      213: -2880725687375763100
+    second: B15_dust_sheet_4x2_5
+  - first:
+      213: 6383937554823537891
+    second: B15_dust_sheet_4x2_6
+  - first:
+      213: 78469615486356741
+    second: B15_dust_sheet_4x2_7
+  - first:
+      213: -6381910245820658433
+    second: B15_dust_sheet_4x2_8
+  - first:
+      213: 5303914551717156429
+    second: B15_dust_sheet_4x2_9
+  - first:
+      213: -3448645889613302188
+    second: B15_dust_sheet_4x2_10
+  - first:
+      213: -1906218594830692030
+    second: B15_dust_sheet_4x2_11
+  - first:
+      213: 6217079023485260537
+    second: B15_dust_sheet_4x2_12
+  - first:
+      213: -3774730967962658889
+    second: B15_dust_sheet_4x2_13
+  - first:
+      213: 7879247301916908476
+    second: B15_dust_sheet_4x2_14
+  - first:
+      213: -5004446771371531075
+    second: B15_dust_sheet_4x2_15
+  - first:
+      213: 5392470445048446636
+    second: B15_dust_sheet_4x2_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_0
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 602
+        width: 437
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3320c3840d2fb53e0800000000000000
+      internalID: -2063789027840228813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_1
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 602
+        width: 429
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2386c0b5111afd0800000000000000
+      internalID: -2332564049253354759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_2
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 877
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606f1da0801ee8600800000000000000
+      internalID: 472562435578000902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_3
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 887
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940b210782f7bf0c0800000000000000
+      internalID: -4540895987617320887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 602
+        width: 248
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ede490a8ae88f9960800000000000000
+      internalID: 7610952436199018206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_5
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 602
+        width: 393
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469ef94004b9508d0800000000000000
+      internalID: -2880725687375763100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_6
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 686
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4688fe16d489850800000000000000
+      internalID: 6383937554823537891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_7
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 90
+        width: 402
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50dc9b413b7c61100800000000000000
+      internalID: 78469615486356741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_8
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 280
+        width: 54
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc0f69b176ee67a0800000000000000
+      internalID: -6381910245820658433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_9
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 304
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d465026fe2a4b9940800000000000000
+      internalID: 5303914551717156429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_10
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 90
+        width: 403
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456fc79c5d2f320d0800000000000000
+      internalID: -3448645889613302188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_11
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 90
+        width: 373
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2415fde9940cb85e0800000000000000
+      internalID: -1906218594830692030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_12
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 225
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f21f5fae60874650800000000000000
+      internalID: 6217079023485260537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_13
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 90
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b75beb1f267d9bc0800000000000000
+      internalID: -3774730967962658889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_14
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 90
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb5630dca5b85d60800000000000000
+      internalID: 7879247301916908476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_15
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 90
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db4ac071d22ac8ab0800000000000000
+      internalID: -5004446771371531075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B15_dust_sheet_4x2_16
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 90
+        width: 181
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caeb7ea9c47e5da40800000000000000
+      internalID: 5392470445048446636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      B15_dust_sheet_4x2_0: -2063789027840228813
+      B15_dust_sheet_4x2_1: -2332564049253354759
+      B15_dust_sheet_4x2_10: -3448645889613302188
+      B15_dust_sheet_4x2_11: -1906218594830692030
+      B15_dust_sheet_4x2_12: 6217079023485260537
+      B15_dust_sheet_4x2_13: -3774730967962658889
+      B15_dust_sheet_4x2_14: 7879247301916908476
+      B15_dust_sheet_4x2_15: -5004446771371531075
+      B15_dust_sheet_4x2_16: 5392470445048446636
+      B15_dust_sheet_4x2_2: 472562435578000902
+      B15_dust_sheet_4x2_3: -4540895987617320887
+      B15_dust_sheet_4x2_4: 7610952436199018206
+      B15_dust_sheet_4x2_5: -2880725687375763100
+      B15_dust_sheet_4x2_6: 6383937554823537891
+      B15_dust_sheet_4x2_7: 78469615486356741
+      B15_dust_sheet_4x2_8: -6381910245820658433
+      B15_dust_sheet_4x2_9: 5303914551717156429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 68166212fe837e441aebf94112fbbec5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2330299730500790766
+    second: B2_05c_training_trench_0
+  - first:
+      213: 570582446397176235
+    second: B2_05c_training_trench_1
+  - first:
+      213: -1073097154993557280
+    second: B2_05c_training_trench_2
+  - first:
+      213: 7834184847790847867
+    second: B2_05c_training_trench_3
+  - first:
+      213: 5956777031975353296
+    second: B2_05c_training_trench_4
+  - first:
+      213: -8872439702194459401
+    second: B2_05c_training_trench_5
+  - first:
+      213: -5354330734790630866
+    second: B2_05c_training_trench_6
+  - first:
+      213: -6119071160084974892
+    second: B2_05c_training_trench_7
+  - first:
+      213: 6143830561568568698
+    second: B2_05c_training_trench_8
+  - first:
+      213: -4211856812647052477
+    second: B2_05c_training_trench_9
+  - first:
+      213: -4510833536680213708
+    second: B2_05c_training_trench_10
+  - first:
+      213: -599735459102254801
+    second: B2_05c_training_trench_11
+  - first:
+      213: 8920924988541108164
+    second: B2_05c_training_trench_12
+  - first:
+      213: 4093090809264314401
+    second: B2_05c_training_trench_13
+  - first:
+      213: 1471370022610287476
+    second: B2_05c_training_trench_14
+  - first:
+      213: -7127511050025729755
+    second: B2_05c_training_trench_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: B2_05c_training_trench_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 401
+        width: 81
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 216df47ddbc19afd0800000000000000
+      internalID: -2330299730500790766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 357
+        width: 87
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba9b39046bd1be700800000000000000
+      internalID: 570582446397176235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 275
+        width: 137
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e07023b2d79b11f0800000000000000
+      internalID: -1073097154993557280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_3
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 397
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77325d9c9d98bc60800000000000000
+      internalID: 7834184847790847867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_4
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 375
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dbb8157629baa250800000000000000
+      internalID: 5956777031975353296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_5
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 319
+        width: 315
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc60ab5913ced480800000000000000
+      internalID: -8872439702194459401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_6
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 367
+        width: 44
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2229dea09891b5b0800000000000000
+      internalID: -5354330734790630866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 383
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d23ccb3331b41ba0800000000000000
+      internalID: -6119071160084974892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_8
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 369
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75bb762855434550800000000000000
+      internalID: 6143830561568568698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_9
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 367
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b0d555b8a7c85c0800000000000000
+      internalID: -4211856812647052477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_10
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 335
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433c14d3ccc4661c0800000000000000
+      internalID: -4510833536680213708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 279
+        width: 49
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29110907cf4da7f0800000000000000
+      internalID: -599735459102254801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_12
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 311
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cff5e1130e7dcb70800000000000000
+      internalID: 8920924988541108164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 293
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1289d97a7649dc830800000000000000
+      internalID: 4093090809264314401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_14
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 275
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b38da6d3b5b6410800000000000000
+      internalID: 1471370022610287476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05c_training_trench_15
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 756
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5218b82967ef51d90800000000000000
+      internalID: -7127511050025729755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      B2_05c_training_trench_0: -2330299730500790766
+      B2_05c_training_trench_1: 570582446397176235
+      B2_05c_training_trench_10: -4510833536680213708
+      B2_05c_training_trench_11: -599735459102254801
+      B2_05c_training_trench_12: 8920924988541108164
+      B2_05c_training_trench_13: 4093090809264314401
+      B2_05c_training_trench_14: 1471370022610287476
+      B2_05c_training_trench_15: -7127511050025729755
+      B2_05c_training_trench_2: -1073097154993557280
+      B2_05c_training_trench_3: 7834184847790847867
+      B2_05c_training_trench_4: 5956777031975353296
+      B2_05c_training_trench_5: -8872439702194459401
+      B2_05c_training_trench_6: -5354330734790630866
+      B2_05c_training_trench_7: -6119071160084974892
+      B2_05c_training_trench_8: 6143830561568568698
+      B2_05c_training_trench_9: -4211856812647052477
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
