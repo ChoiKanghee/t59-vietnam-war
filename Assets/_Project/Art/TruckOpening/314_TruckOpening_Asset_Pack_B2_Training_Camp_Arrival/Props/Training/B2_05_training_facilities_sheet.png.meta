@@ -1,0 +1,1248 @@
+fileFormatVersion: 2
+guid: 248a260336fd3ec40973db44b1028bd7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1587330233578255556
+    second: B2_05_training_facilities_sheet_0
+  - first:
+      213: 6205602866159422741
+    second: B2_05_training_facilities_sheet_1
+  - first:
+      213: -812249743419249396
+    second: B2_05_training_facilities_sheet_2
+  - first:
+      213: 4462421229768747230
+    second: B2_05_training_facilities_sheet_3
+  - first:
+      213: -2144650866042063205
+    second: B2_05_training_facilities_sheet_4
+  - first:
+      213: -129529709232578972
+    second: B2_05_training_facilities_sheet_5
+  - first:
+      213: 6275086217181564837
+    second: B2_05_training_facilities_sheet_6
+  - first:
+      213: 1924730008840420463
+    second: B2_05_training_facilities_sheet_7
+  - first:
+      213: 200728684446806423
+    second: B2_05_training_facilities_sheet_8
+  - first:
+      213: 5566302278955610899
+    second: B2_05_training_facilities_sheet_9
+  - first:
+      213: 12770944728374557
+    second: B2_05_training_facilities_sheet_10
+  - first:
+      213: 2284216530654962487
+    second: B2_05_training_facilities_sheet_11
+  - first:
+      213: 7442053900008338847
+    second: B2_05_training_facilities_sheet_12
+  - first:
+      213: 5366943507852541244
+    second: B2_05_training_facilities_sheet_13
+  - first:
+      213: -1144333150724674450
+    second: B2_05_training_facilities_sheet_14
+  - first:
+      213: 1923314379215419498
+    second: B2_05_training_facilities_sheet_15
+  - first:
+      213: 7699225563813091942
+    second: B2_05_training_facilities_sheet_16
+  - first:
+      213: -6710057710541398947
+    second: B2_05_training_facilities_sheet_17
+  - first:
+      213: 6255897080970904153
+    second: B2_05_training_facilities_sheet_18
+  - first:
+      213: -4992490771886610519
+    second: B2_05_training_facilities_sheet_19
+  - first:
+      213: 3976671721915797884
+    second: B2_05_training_facilities_sheet_20
+  - first:
+      213: -4439964054426368083
+    second: B2_05_training_facilities_sheet_21
+  - first:
+      213: -8120041751276948322
+    second: B2_05_training_facilities_sheet_22
+  - first:
+      213: -8278705129590574961
+    second: B2_05_training_facilities_sheet_23
+  - first:
+      213: 8341474658111199520
+    second: B2_05_training_facilities_sheet_24
+  - first:
+      213: 2788656017551413588
+    second: B2_05_training_facilities_sheet_25
+  - first:
+      213: -3338177515736085530
+    second: B2_05_training_facilities_sheet_26
+  - first:
+      213: 6069820942453559501
+    second: B2_05_training_facilities_sheet_27
+  - first:
+      213: -5497497061000838004
+    second: B2_05_training_facilities_sheet_28
+  - first:
+      213: -301685813337252850
+    second: B2_05_training_facilities_sheet_29
+  - first:
+      213: -122053198926509840
+    second: B2_05_training_facilities_sheet_30
+  - first:
+      213: -591891253027874325
+    second: B2_05_training_facilities_sheet_31
+  - first:
+      213: -7741233447131122366
+    second: B2_05_training_facilities_sheet_32
+  - first:
+      213: -8836534914057630820
+    second: B2_05_training_facilities_sheet_33
+  - first:
+      213: 5494704761376745722
+    second: B2_05_training_facilities_sheet_34
+  - first:
+      213: -6871564418816010211
+    second: B2_05_training_facilities_sheet_35
+  - first:
+      213: -1561070255225260981
+    second: B2_05_training_facilities_sheet_36
+  - first:
+      213: 4321209236756041700
+    second: B2_05_training_facilities_sheet_37
+  - first:
+      213: -7479102729135512174
+    second: B2_05_training_facilities_sheet_38
+  - first:
+      213: 264544247639301744
+    second: B2_05_training_facilities_sheet_39
+  - first:
+      213: 7498238603399591900
+    second: B2_05_training_facilities_sheet_40
+  - first:
+      213: -8125979935180049161
+    second: B2_05_training_facilities_sheet_41
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 903
+        width: 275
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3b8456009ba8f9e0800000000000000
+      internalID: -1587330233578255556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 834
+        width: 43
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51d04969deabe1650800000000000000
+      internalID: 6205602866159422741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 994
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0de79e692f4ab4f0800000000000000
+      internalID: -812249743419249396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 983
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8278e2774bded30800000000000000
+      internalID: 4462421229768747230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 879
+        width: 113
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b963452766bac32e0800000000000000
+      internalID: -2144650866042063205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 433
+        width: 735
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46e155d6a61d33ef0800000000000000
+      internalID: -129529709232578972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 957
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af8e0eeaa5951750800000000000000
+      internalID: 6275086217181564837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 293
+        width: 785
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6cb771deb306ba10800000000000000
+      internalID: 1924730008840420463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 901
+        width: 87
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791feaccca129c200800000000000000
+      internalID: 200728684446806423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 899
+        width: 55
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313b8916e6a7f3d40800000000000000
+      internalID: 5566302278955610899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 893
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d1bf74b1f5d2000800000000000000
+      internalID: 12770944728374557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 881
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 733a3c315da23bf10800000000000000
+      internalID: 2284216530654962487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 887
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f95be45a79c774760800000000000000
+      internalID: 7442053900008338847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 887
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3db3236fa63b7a40800000000000000
+      internalID: 5366943507852541244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 859
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c2a56ff038e10f0800000000000000
+      internalID: -1144333150724674450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 855
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68398cdc3cf0ba10800000000000000
+      internalID: 1923314379215419498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 855
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66a9fa8abd429da60800000000000000
+      internalID: 7699225563813091942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 815
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c1fcc401611e2a0800000000000000
+      internalID: -6710057710541398947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 808
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9528caeff3961d650800000000000000
+      internalID: 6255897080970904153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 577
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a76845281c17bab0800000000000000
+      internalID: -4992490771886610519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 577
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c71d12d9cd9ff2730800000000000000
+      internalID: 3976671721915797884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 529
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7c96867341262c0800000000000000
+      internalID: -4439964054426368083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 477
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e94fbcd8c01df4f80800000000000000
+      internalID: -8120041751276948322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 479
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80bc8e0c812c1d80800000000000000
+      internalID: -8278705129590574961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 445
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02914aba10fd2c370800000000000000
+      internalID: 8341474658111199520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 458
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45158ee7fdb43b620800000000000000
+      internalID: 2788656017551413588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 421
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ebca516c396ca1d0800000000000000
+      internalID: -3338177515736085530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 429
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc0db25ecf55c3450800000000000000
+      internalID: 6069820942453559501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 437
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c848a4dcc87f4b3b0800000000000000
+      internalID: -5497497061000838004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 415
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c1246e95230dbf0800000000000000
+      internalID: -301685813337252850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 401
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f8094223416e4ef0800000000000000
+      internalID: -122053198926509840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 409
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be9dc959a0e29c7f0800000000000000
+      internalID: -591891253027874325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 22
+        width: 744
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2457064d13d919490800000000000000
+      internalID: -7741233447131122366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 399
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b024a40525e5580800000000000000
+      internalID: -8836534914057630820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 371
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af822874edc114c40800000000000000
+      internalID: 5494704761376745722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_35
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 325
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d181245719c43a0a0800000000000000
+      internalID: -6871564418816010211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_36
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 343
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b44bedfafd6f55ae0800000000000000
+      internalID: -1561070255225260981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 325
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ef0bf4f7e408fb30800000000000000
+      internalID: 4321209236756041700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_38
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 315
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 295293f91b3e43890800000000000000
+      internalID: -7479102729135512174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_39
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 31
+        width: 759
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ed9e37799dba300800000000000000
+      internalID: 264544247639301744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 95
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd7f0cc48481f0860800000000000000
+      internalID: 7498238603399591900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: B2_05_training_facilities_sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 47
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f434af5d48ba3f80800000000000000
+      internalID: -8125979935180049161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      B2_05_training_facilities_sheet_0: -1587330233578255556
+      B2_05_training_facilities_sheet_1: 6205602866159422741
+      B2_05_training_facilities_sheet_10: 12770944728374557
+      B2_05_training_facilities_sheet_11: 2284216530654962487
+      B2_05_training_facilities_sheet_12: 7442053900008338847
+      B2_05_training_facilities_sheet_13: 5366943507852541244
+      B2_05_training_facilities_sheet_14: -1144333150724674450
+      B2_05_training_facilities_sheet_15: 1923314379215419498
+      B2_05_training_facilities_sheet_16: 7699225563813091942
+      B2_05_training_facilities_sheet_17: -6710057710541398947
+      B2_05_training_facilities_sheet_18: 6255897080970904153
+      B2_05_training_facilities_sheet_19: -4992490771886610519
+      B2_05_training_facilities_sheet_2: -812249743419249396
+      B2_05_training_facilities_sheet_20: 3976671721915797884
+      B2_05_training_facilities_sheet_21: -4439964054426368083
+      B2_05_training_facilities_sheet_22: -8120041751276948322
+      B2_05_training_facilities_sheet_23: -8278705129590574961
+      B2_05_training_facilities_sheet_24: 8341474658111199520
+      B2_05_training_facilities_sheet_25: 2788656017551413588
+      B2_05_training_facilities_sheet_26: -3338177515736085530
+      B2_05_training_facilities_sheet_27: 6069820942453559501
+      B2_05_training_facilities_sheet_28: -5497497061000838004
+      B2_05_training_facilities_sheet_29: -301685813337252850
+      B2_05_training_facilities_sheet_3: 4462421229768747230
+      B2_05_training_facilities_sheet_30: -122053198926509840
+      B2_05_training_facilities_sheet_31: -591891253027874325
+      B2_05_training_facilities_sheet_32: -7741233447131122366
+      B2_05_training_facilities_sheet_33: -8836534914057630820
+      B2_05_training_facilities_sheet_34: 5494704761376745722
+      B2_05_training_facilities_sheet_35: -6871564418816010211
+      B2_05_training_facilities_sheet_36: -1561070255225260981
+      B2_05_training_facilities_sheet_37: 4321209236756041700
+      B2_05_training_facilities_sheet_38: -7479102729135512174
+      B2_05_training_facilities_sheet_39: 264544247639301744
+      B2_05_training_facilities_sheet_4: -2144650866042063205
+      B2_05_training_facilities_sheet_40: 7498238603399591900
+      B2_05_training_facilities_sheet_41: -8125979935180049161
+      B2_05_training_facilities_sheet_5: -129529709232578972
+      B2_05_training_facilities_sheet_6: 6275086217181564837
+      B2_05_training_facilities_sheet_7: 1924730008840420463
+      B2_05_training_facilities_sheet_8: 200728684446806423
+      B2_05_training_facilities_sheet_9: 5566302278955610899
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

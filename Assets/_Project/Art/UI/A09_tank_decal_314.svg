@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="240" viewBox="0 0 512 240">
+  <text x="28" y="192" font-family="Nimbus Sans Narrow, DejaVu Sans, sans-serif" font-size="210" font-weight="900" letter-spacing="2" fill="#ded7bc" stroke="#22281f" stroke-width="10" paint-order="stroke fill">314</text>
+  <path d="M43 203h420" stroke="#8f3f32" stroke-width="9" opacity="0.88"/>
+</svg>
