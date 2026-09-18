@@ -223,7 +223,7 @@ namespace T59VietnamWar.Editor
             Dictionary<string, Sprite> sprites, Sprite riceFieldSprite)
         {
             Transform layerRoot = Child(parent, "RuralLife");
-            layerRoot.localPosition = new Vector3(0f, -1.78f, 0f);
+            layerRoot.localPosition = new Vector3(0f, -0.42f, 0f);
 
             float span = LoopingSpan(riceFieldSprite, 1f, 1.2f);
             var tiles = new Transform[3];
@@ -352,6 +352,16 @@ namespace T59VietnamWar.Editor
             if (controllers.Length != 1)
                 throw new InvalidOperationException("Expected exactly one existing MainMenuController. No menu was rebuilt.");
 
+            MainMenuController menuController = controllers[0];
+            Canvas[] canvases = scene.GetRootGameObjects()
+                .SelectMany(root => root.GetComponentsInChildren<Canvas>(true)).ToArray();
+            if (canvases.Length != 1)
+                throw new InvalidOperationException($"Expected exactly one existing menu Canvas. Found {canvases.Length}.");
+            CanvasGroup menuCanvasGroup = EnsureSingleComponent<CanvasGroup>(canvases[0].gameObject);
+            menuCanvasGroup.alpha = 1f;
+            menuCanvasGroup.interactable = true;
+            menuCanvasGroup.blocksRaycasts = true;
+
             Transform tankRoot = FindUnique(scene, TankRootName);
             Camera menuCamera = scene.GetRootGameObjects()
                 .SelectMany(root => root.GetComponentsInChildren<Camera>(true))
@@ -377,6 +387,16 @@ namespace T59VietnamWar.Editor
             stateData.FindProperty("existingTankFallback").objectReferenceValue = tankRoot.gameObject;
             stateData.ApplyModifiedPropertiesWithoutUndo();
             state.Apply();
+
+            MainMenuJourneyTransition transition = EnsureSingleComponent<MainMenuJourneyTransition>(stateRoot);
+            var transitionData = new SerializedObject(transition);
+            transitionData.FindProperty("menuController").objectReferenceValue = menuController;
+            transitionData.FindProperty("menuCanvasGroup").objectReferenceValue = menuCanvasGroup;
+            transitionData.ApplyModifiedPropertiesWithoutUndo();
+
+            var menuData = new SerializedObject(menuController);
+            menuData.FindProperty("journeyTransition").objectReferenceValue = transition;
+            menuData.ApplyModifiedPropertiesWithoutUndo();
 
             EditorSceneManager.MarkSceneDirty(scene);
             if (!EditorSceneManager.SaveScene(scene))
@@ -407,6 +427,13 @@ namespace T59VietnamWar.Editor
         {
             foreach (GameObject root in scene.GetRootGameObjects().Where(root => root.name == name).ToArray())
                 Object.DestroyImmediate(root);
+        }
+
+        private static T EnsureSingleComponent<T>(GameObject target) where T : Component
+        {
+            T[] components = target.GetComponents<T>();
+            for (int i = 1; i < components.Length; i++) Object.DestroyImmediate(components[i]);
+            return components.Length > 0 ? components[0] : target.AddComponent<T>();
         }
 
         private static Transform Child(Transform parent, string name)

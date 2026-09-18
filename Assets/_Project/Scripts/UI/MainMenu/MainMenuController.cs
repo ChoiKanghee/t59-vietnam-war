@@ -8,7 +8,6 @@ namespace T59VietnamWar.UI
     public sealed class MainMenuController : MonoBehaviour
     {
         [Header("Scene routing")]
-        [SerializeField] private string startJourneyScene = "Level01_Training";
         [SerializeField] private MenuSaveProvider saveProvider;
 
         [Header("Menu")]
@@ -25,9 +24,13 @@ namespace T59VietnamWar.UI
         [SerializeField] private MenuPanel journalPanel;
         [SerializeField] private MenuPanel optionsPanel;
 
+        [Header("Journey transition")]
+        [SerializeField] private MainMenuJourneyTransition journeyTransition;
+
         private Button returnSelection;
         private MenuPanel activePanel;
         private bool loading;
+        private bool transitionInputLocked;
 
         private void Awake()
         {
@@ -62,7 +65,7 @@ namespace T59VietnamWar.UI
 
         public void RefreshContinue()
         {
-            continueButton.interactable = TryGetContinueScene(out _);
+            continueButton.interactable = !transitionInputLocked && TryGetContinueScene(out _);
             if (!continueButton.interactable && EventSystem.current != null &&
                 EventSystem.current.currentSelectedGameObject == continueButton.gameObject)
                 Select(startJourneyButton);
@@ -77,18 +80,29 @@ namespace T59VietnamWar.UI
 
         public void Continue()
         {
+            if (transitionInputLocked) return;
             if (TryGetContinueScene(out string sceneName)) LoadScene(sceneName);
             else RefreshContinue();
         }
 
-        public void StartJourney() => LoadScene(startJourneyScene);
+        public void StartJourney()
+        {
+            if (transitionInputLocked) return;
+            if (journeyTransition == null)
+            {
+                Debug.LogError("Start Journey cannot begin because MainMenuJourneyTransition is not assigned. Run the M1A builder to repair the menu wiring.", this);
+                return;
+            }
+
+            journeyTransition.TryBeginTransition();
+        }
         public void OpenLevelSelect() => OpenPanel(levelSelectPanel, levelSelectButton);
         public void OpenJournal() => OpenPanel(journalPanel, journalButton);
         public void OpenOptions() => OpenPanel(optionsPanel, optionsButton);
 
         private void OpenPanel(MenuPanel panel, Button source)
         {
-            if (loading) return;
+            if (loading || transitionInputLocked) return;
             if (activePanel != null) activePanel.gameObject.SetActive(false);
             returnSelection = source;
             menuRoot.SetActive(false);
@@ -99,7 +113,7 @@ namespace T59VietnamWar.UI
 
         public void ClosePanel()
         {
-            if (activePanel == null) return;
+            if (activePanel == null || transitionInputLocked) return;
             activePanel.gameObject.SetActive(false);
             activePanel = null;
             menuRoot.SetActive(true);
@@ -127,11 +141,26 @@ namespace T59VietnamWar.UI
 
         public void Quit()
         {
+            if (transitionInputLocked) return;
 #if UNITY_EDITOR
             Debug.Log("Quit requested. Application.Quit runs in a player build.", this);
 #else
             Application.Quit();
 #endif
+        }
+
+        public void SetTransitionInputLocked(bool locked)
+        {
+            transitionInputLocked = locked;
+            if (continueButton != null) continueButton.interactable = !locked && TryGetContinueScene(out _);
+            if (startJourneyButton != null) startJourneyButton.interactable = !locked;
+            if (levelSelectButton != null) levelSelectButton.interactable = !locked;
+            if (journalButton != null) journalButton.interactable = !locked;
+            if (optionsButton != null) optionsButton.interactable = !locked;
+            if (quitButton != null) quitButton.interactable = !locked;
+
+            if (locked && EventSystem.current != null)
+                EventSystem.current.SetSelectedGameObject(null);
         }
     }
 }
