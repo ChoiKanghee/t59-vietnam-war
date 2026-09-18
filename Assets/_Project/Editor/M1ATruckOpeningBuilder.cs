@@ -8,6 +8,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 namespace T59VietnamWar.Editor
@@ -22,6 +23,7 @@ namespace T59VietnamWar.Editor
         private const string TruckInstanceName = "M1A Truck Opening Presentation";
         private const string StateRootName = "M1A Campaign Visual State";
         private const string TankRootName = "M0A Asset Pack Visuals";
+        private const string DisclaimerRootName = "M0 Content Disclaimer";
 
         private static readonly string[] RuntimeAssets =
         {
@@ -446,6 +448,8 @@ namespace T59VietnamWar.Editor
             menuCanvasGroup.alpha = 1f;
             menuCanvasGroup.interactable = true;
             menuCanvasGroup.blocksRaycasts = true;
+            canvases[0].name = "Main Canvas";
+            BuildContentDisclaimer(canvases[0].transform, menuController);
 
             Transform tankRoot = FindUnique(scene, TankRootName);
             Camera menuCamera = scene.GetRootGameObjects()
@@ -494,6 +498,135 @@ namespace T59VietnamWar.Editor
             EditorSceneManager.MarkSceneDirty(scene);
             if (!EditorSceneManager.SaveScene(scene))
                 throw new IOException("Could not save updated MainMenu scene: " + ScenePath);
+        }
+
+        private static void BuildContentDisclaimer(Transform canvas, MainMenuController menuController)
+        {
+            GameObject rootObject = FindOrCreateUniqueChildObject(canvas, DisclaimerRootName);
+            string[] requiredChildren = { "Title", "Body", "Continue Hint" };
+            GameObject[] childrenToRemove = rootObject.transform.Cast<Transform>()
+                .Where(child => child != null && child.gameObject != null &&
+                    !requiredChildren.Contains(child.name))
+                .Select(child => child.gameObject)
+                .ToArray();
+            foreach (GameObject childToRemove in childrenToRemove)
+                if (childToRemove != null) Object.DestroyImmediate(childToRemove);
+
+            rootObject = FindOrCreateUniqueChildObject(canvas, DisclaimerRootName);
+
+            rootObject.transform.SetAsLastSibling();
+            RectTransform rootRect = EnsureSingleComponent<RectTransform>(rootObject);
+            SetRect(rootRect, Vector2.zero, Vector2.one, Vector2.zero, Vector2.zero);
+            Transform root = rootRect.transform;
+
+            Image background = EnsureSingleComponent<Image>(rootObject);
+            background.color = new Color32(13, 18, 15, 255);
+            background.raycastTarget = true;
+
+            CanvasGroup group = EnsureSingleComponent<CanvasGroup>(rootObject);
+            group.alpha = 1f;
+            group.interactable = true;
+            group.blocksRaycasts = true;
+
+            Text title = BuildDisclaimerText(root, "Title", "LƯU Ý VỀ NỘI DUNG", 42, FontStyle.Bold,
+                new Color32(214, 196, 151, 255), new Vector2(0f, 120f), new Vector2(1000f, 80f));
+            Text body = BuildDisclaimerText(root, "Body",
+                "314 là một tác phẩm hư cấu lấy cảm hứng từ bối cảnh lịch sử Việt Nam.\n\n" +
+                "Các nhân vật, đơn vị, địa danh và tình tiết chính trong trò chơi được hư cấu\n" +
+                "hoặc sáng tạo lại nhằm phục vụ câu chuyện.\n\n" +
+                "Trò chơi không nhằm tái hiện đầy đủ lịch sử hoặc thay thế các tư liệu lịch sử\n" +
+                "chính thống.",
+                28, FontStyle.Normal, new Color32(229, 225, 214, 255),
+                new Vector2(0f, -65f), new Vector2(980f, 330f));
+            body.lineSpacing = 1.15f;
+            BuildDisclaimerText(root, "Continue Hint", "Nhấn phím bất kỳ hoặc chạm để tiếp tục",
+                22, FontStyle.Normal, new Color32(229, 225, 214, 255),
+                new Vector2(0f, -280f), new Vector2(900f, 50f));
+
+            var menuData = new SerializedObject(menuController);
+            Button[] buttons =
+            {
+                (Button)menuData.FindProperty("continueButton").objectReferenceValue,
+                (Button)menuData.FindProperty("startJourneyButton").objectReferenceValue,
+                (Button)menuData.FindProperty("levelSelectButton").objectReferenceValue,
+                (Button)menuData.FindProperty("journalButton").objectReferenceValue,
+                (Button)menuData.FindProperty("optionsButton").objectReferenceValue,
+                (Button)menuData.FindProperty("quitButton").objectReferenceValue
+            };
+            if (buttons.Any(button => button == null))
+                throw new InvalidOperationException("Content disclaimer requires all six existing menu buttons.");
+
+            MainMenuDisclaimer disclaimer = EnsureSingleComponent<MainMenuDisclaimer>(rootObject);
+            var disclaimerData = new SerializedObject(disclaimer);
+            disclaimerData.FindProperty("canvasGroup").objectReferenceValue = group;
+            SetObjectArray(disclaimerData.FindProperty("menuButtons"), buttons);
+            disclaimerData.FindProperty("preferredSelection").objectReferenceValue = buttons[1];
+            disclaimerData.FindProperty("minimumDuration").floatValue = 1f;
+            disclaimerData.FindProperty("fadeDuration").floatValue = 0.8f;
+            disclaimerData.ApplyModifiedPropertiesWithoutUndo();
+            rootObject.SetActive(true);
+        }
+
+        private static Text BuildDisclaimerText(Transform parent, string name, string copy, int size,
+            FontStyle style, Color color, Vector2 position, Vector2 dimensions)
+        {
+            GameObject childObject = FindOrCreateUniqueChildObject(parent, name);
+            RectTransform rect = EnsureSingleComponent<RectTransform>(childObject);
+            rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 0.5f);
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.anchoredPosition = position;
+            rect.sizeDelta = dimensions;
+
+            Text text = EnsureSingleComponent<Text>(childObject);
+            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.text = copy;
+            text.fontSize = size;
+            text.fontStyle = style;
+            text.color = color;
+            text.alignment = TextAnchor.MiddleCenter;
+            text.horizontalOverflow = HorizontalWrapMode.Wrap;
+            text.verticalOverflow = VerticalWrapMode.Overflow;
+            text.raycastTarget = false;
+            return text;
+        }
+
+        private static GameObject FindOrCreateUniqueChildObject(Transform parent, string name)
+        {
+            GameObject[] candidates = parent.Cast<Transform>()
+                .Where(candidate => candidate != null && candidate.gameObject != null && candidate.name == name)
+                .Select(candidate => candidate.gameObject)
+                .ToArray();
+            GameObject survivor = candidates.FirstOrDefault(candidate => candidate != null);
+            GameObject[] duplicates = candidates
+                .Where(candidate => candidate != null && candidate != survivor)
+                .ToArray();
+
+            foreach (GameObject duplicate in duplicates)
+                if (duplicate != null) Object.DestroyImmediate(duplicate);
+
+            if (survivor != null)
+            {
+                GameObject reacquired = parent.Cast<Transform>()
+                    .Where(candidate => candidate != null && candidate.gameObject != null)
+                    .Select(candidate => candidate.gameObject)
+                    .FirstOrDefault(candidate => candidate == survivor);
+                if (reacquired != null) return reacquired;
+                throw new InvalidOperationException($"Child '{name}' was lost during duplicate cleanup.");
+            }
+
+            var created = new GameObject(name, typeof(RectTransform));
+            created.transform.SetParent(parent, false);
+            return created;
+        }
+
+        private static void SetRect(RectTransform rect, Vector2 anchorMin, Vector2 anchorMax,
+            Vector2 anchoredPosition, Vector2 sizeDelta)
+        {
+            rect.anchorMin = anchorMin;
+            rect.anchorMax = anchorMax;
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.anchoredPosition = anchoredPosition;
+            rect.sizeDelta = sizeDelta;
         }
 
         private static Transform FindUnique(Scene scene, string name)
