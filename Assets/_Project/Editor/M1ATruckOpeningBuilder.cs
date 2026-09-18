@@ -29,6 +29,7 @@ namespace T59VietnamWar.Editor
             B1Root + "/Background/B02_mountains_far.png",
             B1Root + "/Background/B03_village_mid.png",
             B1Root + "/Background/B04_rice_field_near.png",
+            B1Root + "/Background/B07_forest_transition.png",
             B1Root + "/Ground/B05_road_dirt_loop.png",
             B1Root + "/Foreground/B06_foreground_bamboo_grass.png",
             B1Root + "/Characters/farmer_01_holding_rice.png",
@@ -179,11 +180,20 @@ namespace T59VietnamWar.Editor
             {
                 var layers = new List<ParallaxLayer2D>();
                 Transform environment = Child(root.transform, "Environment");
-                StaticSpriteLayer(environment, "Sky", sprites["B01_sky_dawn_1920x1080"], -60);
-                layers.Add(LoopingLayer(environment, "Mountains", sprites["B02_mountains_far"], -50, 0.08f, 1.0f, -1.8f, 1f, 1f));
-                layers.Add(LoopingLayer(environment, "Village", sprites["B03_village_mid"], -40, 0.18f, 1.2f, -1.78f, 1f, 1f));
-                layers.Add(LoopingLayer(environment, "Rice Field", sprites["B04_rice_field_near"], -30, 0.35f, 1.2f, -1.78f, 1f, 1f));
-                layers.Add(RuralLifeLayer(environment, sprites, sprites["B04_rice_field_near"]));
+                SpriteRenderer sky = StaticSpriteLayer(environment, "Sky", sprites["B01_sky_dawn_1920x1080"], -60);
+                ParallaxLayer2D mountains = LoopingLayer(environment, "Mountains", sprites["B02_mountains_far"], -50, 0.08f, 1.0f, -1.8f, 1f, 1f);
+                layers.Add(mountains);
+                ParallaxLayer2D village = LoopingLayer(environment, "Village", sprites["B03_village_mid"], -40, 0.18f, 1.2f, -1.78f, 1f, 1f);
+                layers.Add(village);
+                ParallaxLayer2D riceField = LoopingLayer(environment, "Rice Field", sprites["B04_rice_field_near"], -30, 0.35f, 1.2f, -1.78f, 1f, 1f);
+                layers.Add(riceField);
+                ParallaxLayer2D ruralLife = RuralLifeLayer(environment, sprites, sprites["B04_rice_field_near"]);
+                layers.Add(ruralLife);
+                ParallaxLayer2D forestEdge = ForestLoopLayer(environment,
+                    sprites["B07_forest_transition"], -29, 0.35f, 19.2f, 10.8f);
+                layers.Add(forestEdge);
+                SpriteRenderer[] forestRenderers = forestEdge.GetComponentsInChildren<SpriteRenderer>(true);
+                SetRendererAlpha(forestRenderers, 0f);
                 layers.Add(LoopingLayer(environment, "Road", sprites["B05_road_dirt_loop"], -20, 1f, 1.2f, -3.75f, 1f, 0.46f));
 
                 TruckVisualRig rig = BuildTruck(root.transform, sprites);
@@ -196,6 +206,20 @@ namespace T59VietnamWar.Editor
                 controllerData.FindProperty("baseScrollSpeed").floatValue = 4.2f;
                 controllerData.ApplyModifiedPropertiesWithoutUndo();
 
+                OpeningJourneyRouteController route = root.AddComponent<OpeningJourneyRouteController>();
+                var routeData = new SerializedObject(route);
+                SetObjectArray(routeData.FindProperty("skyRenderers"), new Object[] { sky });
+                SetObjectArray(routeData.FindProperty("mountainRenderers"),
+                    mountains.GetComponentsInChildren<SpriteRenderer>(true).Cast<Object>().ToArray());
+                SetObjectArray(routeData.FindProperty("villageRenderers"),
+                    village.GetComponentsInChildren<SpriteRenderer>(true).Cast<Object>().ToArray());
+                SetObjectArray(routeData.FindProperty("riceFieldRenderers"),
+                    riceField.GetComponentsInChildren<SpriteRenderer>(true).Cast<Object>().ToArray());
+                SetObjectArray(routeData.FindProperty("ruralLifeRenderers"),
+                    ruralLife.GetComponentsInChildren<SpriteRenderer>(true).Cast<Object>().ToArray());
+                SetObjectArray(routeData.FindProperty("forestEdgeRenderers"), forestRenderers.Cast<Object>().ToArray());
+                routeData.ApplyModifiedPropertiesWithoutUndo();
+
                 PrefabUtility.SaveAsPrefabAsset(root, PrefabPath);
             }
             finally
@@ -204,7 +228,7 @@ namespace T59VietnamWar.Editor
             }
         }
 
-        private static void StaticSpriteLayer(Transform parent, string name, Sprite sprite, int sortingOrder)
+        private static SpriteRenderer StaticSpriteLayer(Transform parent, string name, Sprite sprite, int sortingOrder)
         {
             Transform layerRoot = Child(parent, name);
             layerRoot.localPosition = Vector3.zero;
@@ -217,6 +241,57 @@ namespace T59VietnamWar.Editor
             var renderer = tile.GetComponent<SpriteRenderer>();
             renderer.sprite = sprite;
             renderer.sortingOrder = sortingOrder;
+            return renderer;
+        }
+
+        private static ParallaxLayer2D ForestLoopLayer(Transform parent, Sprite sprite,
+            int sortingOrder, float speedMultiplier, float targetWidth, float targetHeight)
+        {
+            if (sprite == null)
+                throw new InvalidOperationException("ForestEdge is missing B07_forest_transition.");
+
+            Vector3 boundsSize = sprite.bounds.size;
+            if (boundsSize.x <= 0f || boundsSize.y <= 0f)
+                throw new InvalidOperationException($"ForestEdge has invalid B07 sprite bounds {boundsSize}.");
+
+            float uniformScale = targetHeight / boundsSize.y * 1.02f;
+            float renderedTileWidth = boundsSize.x * uniformScale;
+            float tileSpan = renderedTileWidth * 0.98f;
+            int tileCount = Mathf.Max(3, Mathf.CeilToInt(targetWidth / tileSpan) + 2);
+
+            Transform layerRoot = FindOrCreateUniqueChild(parent, "ForestEdge");
+            layerRoot.localPosition = new Vector3(0f, 3f, 0f);
+            layerRoot.localRotation = Quaternion.identity;
+            layerRoot.localScale = Vector3.one;
+
+            var tiles = new Transform[tileCount];
+            var tileNames = new HashSet<string>(Enumerable.Range(1, tileCount)
+                .Select(index => "Tile " + index));
+            foreach (Transform child in layerRoot.Cast<Transform>()
+                .Where(child => !tileNames.Contains(child.name)).ToArray())
+                Object.DestroyImmediate(child.gameObject);
+
+            float centerOffset = (tileCount - 1) * 0.5f;
+            for (int i = 0; i < tileCount; i++)
+            {
+                Transform tile = FindOrCreateUniqueChild(layerRoot, "Tile " + (i + 1));
+                tile.localPosition = new Vector3((i - centerOffset) * tileSpan, 0f, 0f);
+                tile.localRotation = Quaternion.identity;
+                tile.localScale = Vector3.one * uniformScale;
+
+                SpriteRenderer renderer = EnsureSingleComponent<SpriteRenderer>(tile.gameObject);
+                renderer.sprite = sprite;
+                renderer.sortingOrder = sortingOrder;
+                tiles[i] = tile;
+            }
+
+            ParallaxLayer2D layer = EnsureSingleComponent<ParallaxLayer2D>(layerRoot.gameObject);
+            var data = new SerializedObject(layer);
+            SetObjectArray(data.FindProperty("tiles"), tiles.Cast<Object>().ToArray());
+            data.FindProperty("speedMultiplier").floatValue = speedMultiplier;
+            data.FindProperty("tileSpan").floatValue = tileSpan;
+            data.ApplyModifiedPropertiesWithoutUndo();
+            return layer;
         }
 
         private static ParallaxLayer2D RuralLifeLayer(Transform parent,
@@ -284,6 +359,16 @@ namespace T59VietnamWar.Editor
         private static float LoopingSpan(Sprite sprite, float horizontalScale, float overlap) =>
             Mathf.Max(0.01f, sprite.bounds.size.x * horizontalScale - overlap);
 
+        private static void SetRendererAlpha(IEnumerable<SpriteRenderer> renderers, float alpha)
+        {
+            foreach (SpriteRenderer renderer in renderers)
+            {
+                Color color = renderer.color;
+                color.a = alpha;
+                renderer.color = color;
+            }
+        }
+
         private static TruckVisualRig BuildTruck(Transform parent, Dictionary<string, Sprite> sprites)
         {
             Transform truck = Child(parent, "TruckRig");
@@ -293,7 +378,7 @@ namespace T59VietnamWar.Editor
             SpriteObject(bodyBob, "Recruits", sprites["B11_recruits_row"], 2,
                 new Vector2(-1.9f, 0.45f), 0.31f);
             SpriteObject(bodyBob, "Driver", sprites["B12_driver"], 2,
-                new Vector2(2.5f, 0.15f), 0.14f);
+                new Vector2(2.5f, -0.1f), 0.14f);
             SpriteObject(bodyBob, "TruckBody", sprites["B08_truck_body_no_wheels"], 3,
                 Vector2.zero, 0.65f);
 
@@ -394,6 +479,14 @@ namespace T59VietnamWar.Editor
             transitionData.FindProperty("menuCanvasGroup").objectReferenceValue = menuCanvasGroup;
             transitionData.ApplyModifiedPropertiesWithoutUndo();
 
+            OpeningJourneyRouteController[] routes = truckInstance
+                .GetComponentsInChildren<OpeningJourneyRouteController>(true);
+            if (routes.Length != 1)
+                throw new InvalidOperationException($"Expected exactly one OpeningJourneyRouteController in the truck presentation. Found {routes.Length}.");
+            var routeData = new SerializedObject(routes[0]);
+            routeData.FindProperty("journeyTransition").objectReferenceValue = transition;
+            routeData.ApplyModifiedPropertiesWithoutUndo();
+
             var menuData = new SerializedObject(menuController);
             menuData.FindProperty("journeyTransition").objectReferenceValue = transition;
             menuData.ApplyModifiedPropertiesWithoutUndo();
@@ -434,6 +527,18 @@ namespace T59VietnamWar.Editor
             T[] components = target.GetComponents<T>();
             for (int i = 1; i < components.Length; i++) Object.DestroyImmediate(components[i]);
             return components.Length > 0 ? components[0] : target.AddComponent<T>();
+        }
+
+        private static Transform FindOrCreateUniqueChild(Transform parent, string name)
+        {
+            Transform[] matches = parent.Cast<Transform>()
+                .Where(child => child.name == name).ToArray();
+            for (int i = 1; i < matches.Length; i++) Object.DestroyImmediate(matches[i].gameObject);
+            if (matches.Length > 0) return matches[0];
+
+            var created = new GameObject(name);
+            created.transform.SetParent(parent, false);
+            return created.transform;
         }
 
         private static Transform Child(Transform parent, string name)
