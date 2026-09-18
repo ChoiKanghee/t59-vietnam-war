@@ -31,6 +31,10 @@ namespace T59VietnamWar.Editor
             B1Root + "/Background/B04_rice_field_near.png",
             B1Root + "/Ground/B05_road_dirt_loop.png",
             B1Root + "/Foreground/B06_foreground_bamboo_grass.png",
+            B1Root + "/Characters/farmer_01_holding_rice.png",
+            B1Root + "/Characters/farmer_02_harvesting.png",
+            B1Root + "/Characters/farmer_03_carrying_baskets.png",
+            B1Root + "/Characters/water_buffalo_01.png",
             B1Root + "/Vehicle/B08_truck_body_no_wheels.png",
             B1Root + "/Vehicle/B09_wheel_front.png",
             B1Root + "/Vehicle/B10_wheel_rear.png",
@@ -179,6 +183,7 @@ namespace T59VietnamWar.Editor
                 layers.Add(LoopingLayer(environment, "Mountains", sprites["B02_mountains_far"], -50, 0.08f, 1.0f, -1.8f, 1f, 1f));
                 layers.Add(LoopingLayer(environment, "Village", sprites["B03_village_mid"], -40, 0.18f, 1.2f, -1.78f, 1f, 1f));
                 layers.Add(LoopingLayer(environment, "Rice Field", sprites["B04_rice_field_near"], -30, 0.35f, 1.2f, -1.78f, 1f, 1f));
+                layers.Add(RuralLifeLayer(environment, sprites, sprites["B04_rice_field_near"]));
                 layers.Add(LoopingLayer(environment, "Road", sprites["B05_road_dirt_loop"], -20, 1f, 1.2f, -3.75f, 1f, 0.46f));
 
                 TruckVisualRig rig = BuildTruck(root.transform, sprites);
@@ -214,13 +219,46 @@ namespace T59VietnamWar.Editor
             renderer.sortingOrder = sortingOrder;
         }
 
+        private static ParallaxLayer2D RuralLifeLayer(Transform parent,
+            Dictionary<string, Sprite> sprites, Sprite riceFieldSprite)
+        {
+            Transform layerRoot = Child(parent, "RuralLife");
+            layerRoot.localPosition = new Vector3(0f, -1.78f, 0f);
+
+            float span = LoopingSpan(riceFieldSprite, 1f, 1.2f);
+            var tiles = new Transform[3];
+            for (int i = 0; i < tiles.Length; i++)
+            {
+                Transform tile = Child(layerRoot, "Tile " + (i + 1));
+                tile.localPosition = new Vector3((i - 1) * span, 0f, 0f);
+
+                SpriteObject(tile, "Farmer Holding Rice", sprites["farmer_01_holding_rice"], -25,
+                    new Vector2(-1.5f, -1.0f), 0.30f);
+                SpriteObject(tile, "Farmer Harvesting", sprites["farmer_02_harvesting"], -25,
+                    new Vector2(2.0f, -1.18f), 0.30f);
+                SpriteObject(tile, "Farmer Carrying Baskets", sprites["farmer_03_carrying_baskets"], -25,
+                    new Vector2(5.1f, -1.04f), 0.28f);
+                SpriteObject(tile, "Water Buffalo", sprites["water_buffalo_01"], -25,
+                    new Vector2(7.8f, -1.28f), 0.27f);
+                tiles[i] = tile;
+            }
+
+            ParallaxLayer2D layer = layerRoot.gameObject.AddComponent<ParallaxLayer2D>();
+            var data = new SerializedObject(layer);
+            SetObjectArray(data.FindProperty("tiles"), tiles.Cast<Object>().ToArray());
+            data.FindProperty("speedMultiplier").floatValue = 0.35f;
+            data.FindProperty("tileSpan").floatValue = span;
+            data.ApplyModifiedPropertiesWithoutUndo();
+            return layer;
+        }
+
         private static ParallaxLayer2D LoopingLayer(Transform parent, string name, Sprite sprite,
             int sortingOrder, float speedMultiplier, float overlap, float y,
             float horizontalScale, float verticalScale)
         {
             Transform layerRoot = Child(parent, name);
             layerRoot.localPosition = new Vector3(0f, y, 0f);
-            float span = Mathf.Max(0.01f, sprite.bounds.size.x * horizontalScale - overlap);
+            float span = LoopingSpan(sprite, horizontalScale, overlap);
             var tiles = new Transform[3];
             for (int i = 0; i < tiles.Length; i++)
             {
@@ -242,6 +280,9 @@ namespace T59VietnamWar.Editor
             data.ApplyModifiedPropertiesWithoutUndo();
             return layer;
         }
+
+        private static float LoopingSpan(Sprite sprite, float horizontalScale, float overlap) =>
+            Mathf.Max(0.01f, sprite.bounds.size.x * horizontalScale - overlap);
 
         private static TruckVisualRig BuildTruck(Transform parent, Dictionary<string, Sprite> sprites)
         {
