@@ -20,6 +20,7 @@ namespace T59VietnamWar.Editor
         private const string PrefabPath = PrefabFolder + "/TruckOpeningPresentation.prefab";
         private const string B1Root = "Assets/_Project/Art/TruckOpening/314_TruckOpening_Asset_Pack_B";
         private const string B2Root = "Assets/_Project/Art/TruckOpening/314_TruckOpening_Asset_Pack_B2_Training_Camp_Arrival";
+        private const string LamDisembarkRoot = "Assets/_Project/Art/Characters/Lam/C1_TrainingShoes/Disembark";
         private const string TruckInstanceName = "M1A Truck Opening Presentation";
         private const string StateRootName = "M1A Campaign Visual State";
         private const string TankRootName = "M0A Asset Pack Visuals";
@@ -59,6 +60,22 @@ namespace T59VietnamWar.Editor
             B2Root + "/Props/Training/B2_05d_obstacle_course.png"
         };
 
+        private static readonly string[] LamDisembarkAssets =
+        {
+            LamDisembarkRoot + "/C1_lam_training_shoes_get_off_truck_left_01.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_get_off_truck_left_02.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_get_off_truck_left_03.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_get_off_truck_left_04.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_get_off_truck_left_05.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_get_off_truck_left_06.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_get_off_truck_left_07.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_get_off_truck_left_08.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_landing_left_01.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_landing_left_02.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_landing_left_03.png",
+            LamDisembarkRoot + "/C1_lam_training_shoes_landing_left_04.png"
+        };
+
         [MenuItem("314/M1A/Build or Update Truck Opening Menu")]
         public static void BuildOrUpdate()
         {
@@ -72,11 +89,12 @@ namespace T59VietnamWar.Editor
             {
                 ValidateInputs();
                 int reimported = NormalizeProductionImporters();
+                reimported += NormalizeLamDisembarkImporters();
                 AssetDatabase.Refresh();
                 EnsureAssetFolder("Assets/_Project/Prefabs");
                 EnsureAssetFolder(PrefabFolder);
 
-                Dictionary<string, Sprite> sprites = RuntimeAssets.ToDictionary(
+                Dictionary<string, Sprite> sprites = RuntimeAssets.Concat(LamDisembarkAssets).ToDictionary(
                     path => Path.GetFileNameWithoutExtension(path), LoadSingleSprite);
                 BuildPresentationPrefab(sprites);
                 UpdateMainMenuScene();
@@ -98,11 +116,15 @@ namespace T59VietnamWar.Editor
                 throw new DirectoryNotFoundException("Missing B1 asset root: " + B1Root);
             if (!AssetDatabase.IsValidFolder(B2Root))
                 throw new DirectoryNotFoundException("Missing B2 asset root: " + B2Root);
+            if (!AssetDatabase.IsValidFolder(LamDisembarkRoot))
+                throw new DirectoryNotFoundException("Missing Lâm disembark asset root: " + LamDisembarkRoot);
             if (!File.Exists(ScenePath))
                 throw new FileNotFoundException("Missing existing MainMenu scene.", ScenePath);
 
             foreach (string path in RuntimeAssets)
                 if (!File.Exists(path)) throw new FileNotFoundException("Missing required B1 runtime asset.", path);
+            foreach (string path in LamDisembarkAssets)
+                if (!File.Exists(path)) throw new FileNotFoundException("Missing required Lâm disembark frame.", path);
         }
 
         private static int NormalizeProductionImporters()
@@ -169,6 +191,55 @@ namespace T59VietnamWar.Editor
             importer.SetTextureSettings(settings);
             importer.SaveAndReimport();
             return true;
+        }
+
+        private static int NormalizeLamDisembarkImporters()
+        {
+            int changedCount = 0;
+            foreach (string path in LamDisembarkAssets)
+            {
+                var importer = AssetImporter.GetAtPath(path) as TextureImporter;
+                if (importer == null) throw new InvalidOperationException("Texture is not imported: " + path);
+
+                var settings = new TextureImporterSettings();
+                importer.ReadTextureSettings(settings);
+                Vector2 pivot = new Vector2(0.5f, 64f / 1536f);
+                bool changed = importer.textureType != TextureImporterType.Sprite ||
+                    importer.spriteImportMode != SpriteImportMode.Single ||
+                    !Mathf.Approximately(importer.spritePixelsPerUnit, 100f) ||
+                    importer.alphaSource != TextureImporterAlphaSource.FromInput ||
+                    !importer.alphaIsTransparency ||
+                    importer.mipmapEnabled ||
+                    importer.textureCompression != TextureImporterCompression.Uncompressed ||
+                    importer.maxTextureSize != 2048 ||
+                    importer.wrapMode != TextureWrapMode.Clamp ||
+                    settings.spriteMeshType != SpriteMeshType.FullRect ||
+                    settings.spriteAlignment != (int)SpriteAlignment.Custom ||
+                    Vector2.SqrMagnitude(settings.spritePivot - pivot) > 0.00000001f;
+
+                if (!changed) continue;
+
+                importer.textureType = TextureImporterType.Sprite;
+                importer.spriteImportMode = SpriteImportMode.Single;
+                importer.spritePixelsPerUnit = 100f;
+                importer.alphaSource = TextureImporterAlphaSource.FromInput;
+                importer.alphaIsTransparency = true;
+                importer.filterMode = FilterMode.Bilinear;
+                importer.mipmapEnabled = false;
+                importer.textureCompression = TextureImporterCompression.Uncompressed;
+                importer.maxTextureSize = 2048;
+                importer.wrapMode = TextureWrapMode.Clamp;
+                importer.npotScale = TextureImporterNPOTScale.None;
+                importer.sRGBTexture = true;
+                importer.ReadTextureSettings(settings);
+                settings.spriteMeshType = SpriteMeshType.FullRect;
+                settings.spriteAlignment = (int)SpriteAlignment.Custom;
+                settings.spritePivot = pivot;
+                importer.SetTextureSettings(settings);
+                importer.SaveAndReimport();
+                changedCount++;
+            }
+            return changedCount;
         }
 
         private static bool IsInFolder(string path, string folder) =>
@@ -263,6 +334,8 @@ namespace T59VietnamWar.Editor
                 decelerationData.FindProperty("campEntranceRoot").objectReferenceValue = gateApproach;
                 decelerationData.FindProperty("decelerationDuration").floatValue = 3.5f;
                 decelerationData.ApplyModifiedPropertiesWithoutUndo();
+
+                BuildLamDisembark(root.transform, rig.transform, deceleration, sprites);
 
                 OpeningYardEntryController yard = root.AddComponent<OpeningYardEntryController>();
                 var yardData = new SerializedObject(yard);
@@ -495,6 +568,53 @@ namespace T59VietnamWar.Editor
             data.FindProperty("dustFramesPerSecond").floatValue = 11f;
             data.ApplyModifiedPropertiesWithoutUndo();
             return rig;
+        }
+
+        private static void BuildLamDisembark(Transform presentationRoot, Transform truck,
+            OpeningTruckDecelerationController deceleration, Dictionary<string, Sprite> sprites)
+        {
+            Transform lam = Child(truck, "Lam Disembark Presentation");
+            // Start at the rear cargo-bed opening. The controller moves this root to
+            // the rear-wheel ground-contact line during the eight GetOffTruck frames.
+            SpriteRenderer truckBody = truck.Find("BodyBob/TruckBody")?.GetComponent<SpriteRenderer>();
+            Transform rearWheel = truck.Find("RearWheel");
+            if (truckBody == null || truckBody.sprite == null || rearWheel == null)
+                throw new InvalidOperationException("Cannot derive Lâm disembark anchors from the truck geometry.");
+
+            float rearBodyEdge = truckBody.transform.localPosition.x -
+                truckBody.sprite.bounds.extents.x * truckBody.transform.localScale.x;
+            float rearBedExitX = rearBodyEdge + 0.66f;
+            float approvedGroundY = rearWheel.localPosition.y - 0.82f;
+            Vector3 getOffTruckStart = new Vector3(rearBedExitX, 0.25f, 0f);
+            Vector3 landingPosition = new Vector3(rearBedExitX - 1.3f, approvedGroundY, 0f);
+            lam.localPosition = getOffTruckStart;
+            lam.localRotation = Quaternion.identity;
+            lam.localScale = Vector3.one * 0.25f;
+
+            SpriteRenderer renderer = EnsureSingleComponent<SpriteRenderer>(lam.gameObject);
+            renderer.sprite = sprites["C1_lam_training_shoes_get_off_truck_left_01"];
+            renderer.sortingOrder = 6;
+            renderer.flipX = false;
+            renderer.enabled = false;
+
+            OpeningLamDisembarkController controller =
+                presentationRoot.gameObject.AddComponent<OpeningLamDisembarkController>();
+            var data = new SerializedObject(controller);
+            data.FindProperty("truckDeceleration").objectReferenceValue = deceleration;
+            data.FindProperty("lamRenderer").objectReferenceValue = renderer;
+            Sprite[] getOffFrames = Enumerable.Range(1, 8)
+                .Select(i => sprites[$"C1_lam_training_shoes_get_off_truck_left_{i:00}"]).ToArray();
+            Sprite[] landingFrames = Enumerable.Range(1, 4)
+                .Select(i => sprites[$"C1_lam_training_shoes_landing_left_{i:00}"]).ToArray();
+            SetObjectArray(data.FindProperty("getOffTruckFrames"), getOffFrames.Cast<Object>().ToArray());
+            SetObjectArray(data.FindProperty("landingFrames"), landingFrames.Cast<Object>().ToArray());
+            data.FindProperty("getOffTruckStartLocalPosition").vector3Value = getOffTruckStart;
+            data.FindProperty("landingLocalPosition").vector3Value = landingPosition;
+            data.FindProperty("rootMotionEasing").animationCurveValue =
+                AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+            data.FindProperty("getOffTruckFramesPerSecond").floatValue = 11f;
+            data.FindProperty("landingFramesPerSecond").floatValue = 11f;
+            data.ApplyModifiedPropertiesWithoutUndo();
         }
 
         private static SpriteRenderer SpriteObject(Transform parent, string name, Sprite sprite,
