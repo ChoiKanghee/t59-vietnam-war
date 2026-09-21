@@ -1692,72 +1692,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::T59VietnamWar.UI.MenuButtonVisual
   label: {fileID: 70380330}
   focusIcon: {fileID: 641393204}
---- !u!1001 &552099612
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4679283148804285888, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: m_Name
-      value: M1A Truck Opening Presentation
-      objectReference: {fileID: 0}
-    - target: {fileID: 9144882988668324742, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-      propertyPath: journeyTransition
-      value: 
-      objectReference: {fileID: 1400014800}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
---- !u!1 &552099613 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4679283148804285888, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
-  m_PrefabInstance: {fileID: 552099612}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583396888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,6 +3243,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017859866}
   m_CullTransparentMesh: 1
+--- !u!1001 &1021697769
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390101204830811471, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679283148804285888, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: m_Name
+      value: M1A Truck Opening Presentation
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144882988668324742, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+      propertyPath: journeyTransition
+      value: 
+      objectReference: {fileID: 1400014800}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+--- !u!1 &1021697770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4679283148804285888, guid: d2877ec24a51a5c49a01ab5414508c98, type: 3}
+  m_PrefabInstance: {fileID: 1021697769}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1066843685
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,7 +3792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::T59VietnamWar.UI.MainMenuCampaignVisualState
   preview: 0
-  truckOpening: {fileID: 552099613}
+  truckOpening: {fileID: 1021697770}
   existingTankFallback: {fileID: 1716394208}
 --- !u!4 &1400014799
 Transform:
@@ -5772,7 +5772,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 552099612}
+  - {fileID: 1021697769}
   - {fileID: 1066843687}
   - {fileID: 249958547}
   - {fileID: 1284023070}

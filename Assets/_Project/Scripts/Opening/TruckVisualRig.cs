@@ -20,21 +20,24 @@ namespace T59VietnamWar.Opening
         private Vector3 bodyOrigin;
         private Quaternion rearWheelOrigin;
         private Quaternion frontWheelOrigin;
+        private Color dustOriginColor;
 
         private void Awake()
         {
             if (bodyBob != null) bodyOrigin = bodyBob.localPosition;
             if (rearWheel != null) rearWheelOrigin = rearWheel.localRotation;
             if (frontWheel != null) frontWheelOrigin = frontWheel.localRotation;
+            if (dustRenderer != null) dustOriginColor = dustRenderer.color;
         }
 
-        public void SetMotion(double elapsedTime, double travelDistance)
+        public void SetMotion(double elapsedTime, double travelDistance, float normalizedSpeed)
         {
             float time = (float)elapsedTime;
+            float motion = Mathf.Clamp01(normalizedSpeed);
             if (bodyBob != null)
             {
                 Vector3 position = bodyOrigin;
-                position.y += Mathf.Sin(time * bobFrequency * Mathf.PI * 2f) * bobAmplitude;
+                position.y += Mathf.Sin(time * bobFrequency * Mathf.PI * 2f) * bobAmplitude * motion;
                 bodyBob.localPosition = position;
             }
 
@@ -45,7 +48,10 @@ namespace T59VietnamWar.Opening
             {
                 int frame = Mathf.FloorToInt(time * dustFramesPerSecond) % dustFrames.Length;
                 dustRenderer.sprite = dustFrames[frame];
-                dustRenderer.enabled = true;
+                Color color = dustOriginColor;
+                color.a *= Mathf.SmoothStep(0f, 1f, motion);
+                dustRenderer.color = color;
+                dustRenderer.enabled = motion > 0.01f;
             }
         }
 

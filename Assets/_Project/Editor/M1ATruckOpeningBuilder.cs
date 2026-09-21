@@ -53,7 +53,10 @@ namespace T59VietnamWar.Editor
             B1Root + "/VFX/Dust/dust_08.png",
             B2Root + "/Entrance/B2_01e_gate_named_complete.png",
             B2Root + "/Entrance/B2_02_watchtower.png",
-            B2Root + "/Entrance/B2_03_fence_module.png"
+            B2Root + "/Entrance/B2_03_fence_module.png",
+            B2Root + "/Background/B2_04_training_yard_midground.png",
+            B2Root + "/Props/Training/B2_05a_tents_crates.png",
+            B2Root + "/Props/Training/B2_05d_obstacle_course.png"
         };
 
         [MenuItem("314/M1A/Build or Update Truck Opening Menu")]
@@ -202,6 +205,15 @@ namespace T59VietnamWar.Editor
                 Transform gateApproach = BuildGateApproach(environment, sprites);
                 SpriteRenderer[] gateRenderers = gateApproach.GetComponentsInChildren<SpriteRenderer>(true);
                 SetRendererAlpha(gateRenderers, 0f);
+                Transform yardEntry = BuildYardEntry(environment, sprites);
+                SpriteRenderer yardRenderer = yardEntry.Find("Training Yard").GetComponent<SpriteRenderer>();
+                SpriteRenderer[] yardDetailRenderers =
+                {
+                    yardEntry.Find("Tents and Crates").GetComponent<SpriteRenderer>(),
+                    yardEntry.Find("Obstacle Course").GetComponent<SpriteRenderer>()
+                };
+                SetRendererAlpha(new[] { yardRenderer }, 0f);
+                SetRendererAlpha(yardDetailRenderers, 0f);
                 layers.Add(LoopingLayer(environment, "Road", sprites["B05_road_dirt_loop"], -20, 1f, 1.2f, -3.75f, 1f, 0.46f));
 
                 TruckVisualRig rig = BuildTruck(root.transform, sprites);
@@ -242,6 +254,22 @@ namespace T59VietnamWar.Editor
                 SetObjectArray(arrivalData.FindProperty("gateRenderers"),
                     new Object[] { gate.GetComponent<SpriteRenderer>() });
                 arrivalData.ApplyModifiedPropertiesWithoutUndo();
+
+                OpeningTruckDecelerationController deceleration =
+                    root.AddComponent<OpeningTruckDecelerationController>();
+                var decelerationData = new SerializedObject(deceleration);
+                decelerationData.FindProperty("campArrival").objectReferenceValue = arrival;
+                decelerationData.FindProperty("truckController").objectReferenceValue = controller;
+                decelerationData.FindProperty("campEntranceRoot").objectReferenceValue = gateApproach;
+                decelerationData.FindProperty("decelerationDuration").floatValue = 3.5f;
+                decelerationData.ApplyModifiedPropertiesWithoutUndo();
+
+                OpeningYardEntryController yard = root.AddComponent<OpeningYardEntryController>();
+                var yardData = new SerializedObject(yard);
+                yardData.FindProperty("yardEntryRoot").objectReferenceValue = yardEntry;
+                SetObjectArray(yardData.FindProperty("yardRenderers"),
+                    new Object[] { yardRenderer }.Concat(yardDetailRenderers.Cast<Object>()).ToArray());
+                yardData.ApplyModifiedPropertiesWithoutUndo();
 
                 PrefabUtility.SaveAsPrefabAsset(root, PrefabPath);
             }
@@ -366,6 +394,25 @@ namespace T59VietnamWar.Editor
                 new Vector2(7.2f, -0.85f), 0.38f);
             SpriteObject(root, "Named Camp Gate", sprites["B2_01e_gate_named_complete"], -13,
                 new Vector2(1.25f, -0.55f), 0.58f);
+            return root;
+        }
+
+        private static Transform BuildYardEntry(Transform parent, Dictionary<string, Sprite> sprites)
+        {
+            Transform root = FindOrCreateUniqueChild(parent, "YardEntry");
+            root.localPosition = new Vector3(root.localPosition.x, 3f, root.localPosition.z);
+            root.localRotation = Quaternion.identity;
+            root.localScale = Vector3.one;
+
+            foreach (Transform child in root.Cast<Transform>().ToArray())
+                Object.DestroyImmediate(child.gameObject);
+
+            SpriteObject(root, "Training Yard", sprites["B2_04_training_yard_midground"], -28,
+                new Vector2(0f, -1.35f), 1.08f);
+            SpriteObject(root, "Tents and Crates", sprites["B2_05a_tents_crates"], -16,
+                new Vector2(6.4f, -1.55f), 0.46f);
+            SpriteObject(root, "Obstacle Course", sprites["B2_05d_obstacle_course"], -15,
+                new Vector2(-5.8f, -1.7f), 0.42f);
             return root;
         }
 
