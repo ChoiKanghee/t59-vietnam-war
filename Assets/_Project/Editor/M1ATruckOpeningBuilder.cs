@@ -50,7 +50,10 @@ namespace T59VietnamWar.Editor
             B1Root + "/VFX/Dust/dust_05.png",
             B1Root + "/VFX/Dust/dust_06.png",
             B1Root + "/VFX/Dust/dust_07.png",
-            B1Root + "/VFX/Dust/dust_08.png"
+            B1Root + "/VFX/Dust/dust_08.png",
+            B2Root + "/Entrance/B2_01e_gate_named_complete.png",
+            B2Root + "/Entrance/B2_02_watchtower.png",
+            B2Root + "/Entrance/B2_03_fence_module.png"
         };
 
         [MenuItem("314/M1A/Build or Update Truck Opening Menu")]
@@ -196,6 +199,9 @@ namespace T59VietnamWar.Editor
                 layers.Add(forestEdge);
                 SpriteRenderer[] forestRenderers = forestEdge.GetComponentsInChildren<SpriteRenderer>(true);
                 SetRendererAlpha(forestRenderers, 0f);
+                Transform gateApproach = BuildGateApproach(environment, sprites);
+                SpriteRenderer[] gateRenderers = gateApproach.GetComponentsInChildren<SpriteRenderer>(true);
+                SetRendererAlpha(gateRenderers, 0f);
                 layers.Add(LoopingLayer(environment, "Road", sprites["B05_road_dirt_loop"], -20, 1f, 1.2f, -3.75f, 1f, 0.46f));
 
                 TruckVisualRig rig = BuildTruck(root.transform, sprites);
@@ -221,6 +227,21 @@ namespace T59VietnamWar.Editor
                     ruralLife.GetComponentsInChildren<SpriteRenderer>(true).Cast<Object>().ToArray());
                 SetObjectArray(routeData.FindProperty("forestEdgeRenderers"), forestRenderers.Cast<Object>().ToArray());
                 routeData.ApplyModifiedPropertiesWithoutUndo();
+
+                OpeningCampArrivalController arrival = root.AddComponent<OpeningCampArrivalController>();
+                var arrivalData = new SerializedObject(arrival);
+                arrivalData.FindProperty("journeyRoute").objectReferenceValue = route;
+                arrivalData.FindProperty("gateApproachRoot").objectReferenceValue = gateApproach;
+                Transform gate = gateApproach.Find("Named Camp Gate");
+                arrivalData.FindProperty("gateFocalTransform").objectReferenceValue = gate;
+                SetObjectArray(arrivalData.FindProperty("forestEdgeRenderers"), forestRenderers.Cast<Object>().ToArray());
+                SetObjectArray(arrivalData.FindProperty("fenceRenderers"),
+                    new Object[] { gateApproach.Find("Rear Fence").GetComponent<SpriteRenderer>() });
+                SetObjectArray(arrivalData.FindProperty("watchtowerRenderers"),
+                    new Object[] { gateApproach.Find("Watchtower").GetComponent<SpriteRenderer>() });
+                SetObjectArray(arrivalData.FindProperty("gateRenderers"),
+                    new Object[] { gate.GetComponent<SpriteRenderer>() });
+                arrivalData.ApplyModifiedPropertiesWithoutUndo();
 
                 PrefabUtility.SaveAsPrefabAsset(root, PrefabPath);
             }
@@ -327,6 +348,25 @@ namespace T59VietnamWar.Editor
             data.FindProperty("tileSpan").floatValue = span;
             data.ApplyModifiedPropertiesWithoutUndo();
             return layer;
+        }
+
+        private static Transform BuildGateApproach(Transform parent, Dictionary<string, Sprite> sprites)
+        {
+            Transform root = FindOrCreateUniqueChild(parent, "CampArrival");
+            root.localPosition = new Vector3(root.localPosition.x, 1f, root.localPosition.z);
+            root.localRotation = Quaternion.identity;
+            root.localScale = Vector3.one;
+
+            foreach (Transform child in root.Cast<Transform>().ToArray())
+                Object.DestroyImmediate(child.gameObject);
+
+            SpriteObject(root, "Rear Fence", sprites["B2_03_fence_module"], -12,
+                new Vector2(-7.5f, -1.85f), 0.72f);
+            SpriteObject(root, "Watchtower", sprites["B2_02_watchtower"], -11,
+                new Vector2(7.2f, -0.85f), 0.38f);
+            SpriteObject(root, "Named Camp Gate", sprites["B2_01e_gate_named_complete"], -13,
+                new Vector2(1.25f, -0.55f), 0.58f);
+            return root;
         }
 
         private static ParallaxLayer2D LoopingLayer(Transform parent, string name, Sprite sprite,
